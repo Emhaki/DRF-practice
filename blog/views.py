@@ -1,13 +1,8 @@
 from .models import Blog
 from .serializer import BlogSerializer
-from rest_framework import generics
+from rest_framework import viewsets
 
-# Blog의 목록을 보여주는 역할
-class BlogList(generics.ListCreateAPIView):
-    queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
-
-# Blog의 detail을 보여주는 역할
-class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
+# Blog의 목록, detail 보여주기, 수정하기, 삭제하기 모두 가능
+class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
