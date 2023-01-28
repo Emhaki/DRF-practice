@@ -45,7 +45,7 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     # 사용자의 username field는 nickname으로 설정
-    USERNAME_FIELD = 'nickname'
+    USERNAME_FIELDS = 'nickname'
     # 필수로 작성해야하는 field
     REQUIRED_FIELDS = ['email', 'name']
 
